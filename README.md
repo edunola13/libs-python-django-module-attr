@@ -1,39 +1,26 @@
 =====
-Module Users
+Module Attributes
 =====
 
-Module Users is a Django app for basic functionallity of Users.
+Module Attributes is a Django app for basic functionallity of Attributes.
 
 Quick start
 -----------
 
-1. Add "django_module_users" to your INSTALLED_APPS setting like this::
+1. Add "django_module_attr" to your INSTALLED_APPS setting like this::
 
     INSTALLED_APPS = [
         ...
-        'simple_email_confirmation',
-    	'django_rest_passwordreset',
-    	'django_module_users',
+    	'django_module_attr',
     ]
 
-2. Include the module users URLconf in your project urls.py like this::
+2. Include the module attr URLconf in your project urls.py like this::
 
-    path('users/', include('users.urls')),
+    path('attr/', include('django_module_attr.urls')),
 
 Or add the custom rule like you wish.
 
-3. Add the next settings:
-	- AUTH_USER_MODEL = 'django_module_users.User'
-	- SIMPLE_EMAIL_CONFIRMATION_KEY_LENGTH: Length code.
-	- DEFAULT_FROM_EMAIL: Email from send emails.
-    - FRONT_URL: URL used in emails to go back to web site.
-	- CELERY_*: Celery options.
-
-4. Run ``python manage.py migrate`` to create the users models.
-
-5. Override model User o templates:
-    - emails/users/rest_password.html and .txt
-    - emails/users/verification.html and .txt
+3. Run ``python manage.py migrate`` to create the users models.
 
 
 =====
