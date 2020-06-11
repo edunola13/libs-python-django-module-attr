@@ -20,7 +20,11 @@ Quick start
 
 Or add the custom rule like you wish.
 
-3. Run ``python manage.py migrate`` to create the users models.
+3. Add the next settings:
+    - DJ_MOD_ATTR: Module attr specific settings:
+        - PERMISSIONS: Permissions for admin api.
+
+4. Run ``python manage.py migrate`` to create the users models.
 
 
 =====
