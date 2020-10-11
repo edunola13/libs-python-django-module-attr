@@ -31,8 +31,19 @@ class Attribute(models.Model):
 class GenericData(models.Model):
     value = models.TextField()
 
+    @classmethod
+    def create(cls, value):
+        cls.objects.create(value=json.loads(value))
+
     def get_value(self):
         try:
             return json.loads(self.value)
         except Exception:
             return None
+
+    def set_value(self, value):
+        self.value = json.dumps(value)
+
+    def update_value(self, value):
+        self.set_value(value)
+        self.save()
